@@ -35,65 +35,57 @@
 
 ```mermaid
 flowchart TD
-  %% 컨트롤러 및 관리 계층
-  A[컨트롤러 노드<br/>(Keystone, Nova API, Horizon)]
-  B[네트워크 관리 노드<br/>(Neutron: NAT, VPN, 라우터)]
-  
-  %% 컴퓨트 계층 (고성능 컴퓨트 노드)
-  subgraph 컴퓨트 노드 (약 10대)
-    C1[컴퓨트 노드 1<br/>(40 코어, 1TB RAM)]
-    C2[컴퓨트 노드 2<br/>(40 코어, 1TB RAM)]
-    C3[컴퓨트 노드 3<br/>(40 코어, 1TB RAM)]
-    C4[컴퓨트 노드 4<br/>(40 코어, 1TB RAM)]
-    C5[컴퓨트 노드 5<br/>(40 코어, 1TB RAM)]
-    C6[컴퓨트 노드 6<br/>(40 코어, 1TB RAM)]
-    C7[컴퓨트 노드 7<br/>(40 코어, 1TB RAM)]
-    C8[컴퓨트 노드 8<br/>(40 코어, 1TB RAM)]
-    C9[컴퓨트 노드 9<br/>(40 코어, 1TB RAM)]
-    C10[컴퓨트 노드 10<br/>(40 코어, 1TB RAM)]
-  end
+    A[컨트롤러 노드 (Keystone, Nova API, Horizon)]
+    B[네트워크 관리 노드 (Neutron: NAT, VPN, 라우터)]
+    
+    subgraph 컴퓨트 노드 (약 10대)
+      C1[컴퓨트 노드 1 (40 코어, 1TB RAM)]
+      C2[컴퓨트 노드 2 (40 코어, 1TB RAM)]
+      C3[컴퓨트 노드 3 (40 코어, 1TB RAM)]
+      C4[컴퓨트 노드 4 (40 코어, 1TB RAM)]
+      C5[컴퓨트 노드 5 (40 코어, 1TB RAM)]
+      C6[컴퓨트 노드 6 (40 코어, 1TB RAM)]
+      C7[컴퓨트 노드 7 (40 코어, 1TB RAM)]
+      C8[컴퓨트 노드 8 (40 코어, 1TB RAM)]
+      C9[컴퓨트 노드 9 (40 코어, 1TB RAM)]
+      C10[컴퓨트 노드 10 (40 코어, 1TB RAM)]
+    end
 
-  %% 스토리지 계층
-  D[중앙 스토리지 서버<br/>(Ceph / NFS / iSCSI)]
-  
-  %% 외부 접속 계층
-  E[VPN & Bastion Host<br/>(제한된 공인 IP)]
-  
-  %% 네트워크 연결
-  A --- C1
-  A --- C2
-  A --- C3
-  A --- C4
-  A --- C5
-  A --- C6
-  A --- C7
-  A --- C8
-  A --- C9
-  A --- C10
-  
-  B --- E
-  C1 --- D
-  C2 --- D
-  C3 --- D
-  C4 --- D
-  C5 --- D
-  C6 --- D
-  C7 --- D
-  C8 --- D
-  C9 --- D
-  C10 --- D
-  
-  %% 내부 네트워크
-  subgraph 내부 네트워크
+    D[중앙 스토리지 서버 (Ceph / NFS / iSCSI)]
+    E[VPN & Bastion Host (제한된 공인 IP)]
     F[사설 IP 대역 (/23)]
-  end
-  C1 --- F
-  C2 --- F
-  C3 --- F
-  C4 --- F
-  C5 --- F
-  C6 --- F
-  C7 --- F
-  C8 --- F
-  C9 --- F
-  C10 --- F
+    
+    A --- C1
+    A --- C2
+    A --- C3
+    A --- C4
+    A --- C5
+    A --- C6
+    A --- C7
+    A --- C8
+    A --- C9
+    A --- C10
+
+    B --- E
+    
+    C1 --- D
+    C2 --- D
+    C3 --- D
+    C4 --- D
+    C5 --- D
+    C6 --- D
+    C7 --- D
+    C8 --- D
+    C9 --- D
+    C10 --- D
+
+    C1 --- F
+    C2 --- F
+    C3 --- F
+    C4 --- F
+    C5 --- F
+    C6 --- F
+    C7 --- F
+    C8 --- F
+    C9 --- F
+    C10 --- F
