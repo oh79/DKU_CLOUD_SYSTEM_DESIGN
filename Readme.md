@@ -7,7 +7,7 @@
 
 - **목표:**  
   - 학생들에게 개인 실습 및 수업용 VM 제공  
-  - 각 학생당 VM 사양: vCPU 4개, 메모리 8GB, 디스크 128GB  
+  - 각 학생당 VM 사양: **vCPU 4개, 메모리 8GB, 디스크 128GB**  
   - 최대 전체 VM 수: 1,200대 (동시 활성 400대 기준)
 
 - **핵심 구성요소:**  
@@ -23,7 +23,7 @@
     - 외부 접속: NAT, VPN, Bastion Host를 통해 동적 공인 IP 할당 (실제 공인 IP 수는 제한됨)
   - **사용자 및 자원 관리:**  
     - OpenStack 기반 멀티테넌시로 학생 개별 계정 및 프로젝트(테넌트) 단위 관리  
-    - 수업별 자원 할당은 프로젝트별 쿼터 및 RBAC 적용, Terraform/Heat 등으로 자동화
+    - 수업별 자원 할당은 프로젝트별 쿼터 정책 및 RBAC를 적용하며, Terraform/Heat 등으로 자동화
 
 ## 2. 인프라 구성도
 
@@ -34,7 +34,7 @@ flowchart TD
     A[컨트롤러 노드: Keystone, Nova API, Horizon]
     B[네트워크 관리 노드: Neutron - NAT, VPN, 라우터]
     
-    subgraph 컴퓨트노드 (약 10대)
+    subgraph 컴퓨트노드_약_10대
       C1[컴퓨트 노드 1: 40 코어, 1TB RAM]
       C2[컴퓨트 노드 2: 40 코어, 1TB RAM]
       C3[컴퓨트 노드 3: 40 코어, 1TB RAM]
