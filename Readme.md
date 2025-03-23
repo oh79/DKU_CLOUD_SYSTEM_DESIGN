@@ -29,6 +29,8 @@
 
 아래는 주요 인프라 구성 요소와 이들 간의 물리적 연결 관계를 나타낸 Mermaid 다이어그램입니다.
 
+## 인프라 구성도
+
 ```mermaid
 flowchart TD
     A[컨트롤러 노드 - Keystone, Nova API, Horizon]
@@ -85,6 +87,9 @@ flowchart TD
     C8 --- F
     C9 --- F
     C10 --- F
+
+
+
 
 flowchart TD
     U[학생 사용자]
