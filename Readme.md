@@ -31,25 +31,25 @@
 
 ```mermaid
 flowchart TD
-    A[컨트롤러 노드: Keystone, Nova API, Horizon]
-    B[네트워크 관리 노드: Neutron - NAT, VPN, 라우터]
+    A[컨트롤러 노드 - Keystone, Nova API, Horizon]
+    B[네트워크 관리 노드 - Neutron NAT, VPN, 라우터]
     
     subgraph 컴퓨트노드_약_10대
-      C1[컴퓨트 노드 1: 40 코어, 1TB RAM]
-      C2[컴퓨트 노드 2: 40 코어, 1TB RAM]
-      C3[컴퓨트 노드 3: 40 코어, 1TB RAM]
-      C4[컴퓨트 노드 4: 40 코어, 1TB RAM]
-      C5[컴퓨트 노드 5: 40 코어, 1TB RAM]
-      C6[컴퓨트 노드 6: 40 코어, 1TB RAM]
-      C7[컴퓨트 노드 7: 40 코어, 1TB RAM]
-      C8[컴퓨트 노드 8: 40 코어, 1TB RAM]
-      C9[컴퓨트 노드 9: 40 코어, 1TB RAM]
-      C10[컴퓨트 노드 10: 40 코어, 1TB RAM]
+      C1[컴퓨트 노드 1 - 40 코어, 1TB RAM]
+      C2[컴퓨트 노드 2 - 40 코어, 1TB RAM]
+      C3[컴퓨트 노드 3 - 40 코어, 1TB RAM]
+      C4[컴퓨트 노드 4 - 40 코어, 1TB RAM]
+      C5[컴퓨트 노드 5 - 40 코어, 1TB RAM]
+      C6[컴퓨트 노드 6 - 40 코어, 1TB RAM]
+      C7[컴퓨트 노드 7 - 40 코어, 1TB RAM]
+      C8[컴퓨트 노드 8 - 40 코어, 1TB RAM]
+      C9[컴퓨트 노드 9 - 40 코어, 1TB RAM]
+      C10[컴퓨트 노드 10 - 40 코어, 1TB RAM]
     end
 
-    D[중앙 스토리지 서버: Ceph, NFS, iSCSI]
-    E[VPN 및 Bastion Host: 제한된 공인 IP]
-    F[내부 네트워크: 사설 IP 대역 (/23)]
+    D[중앙 스토리지 서버 - Ceph, NFS, iSCSI]
+    E[VPN 및 Bastion Host - 제한된 공인 IP]
+    F[내부 네트워크 - 사설 IP 대역 /23]
     
     A --- C1
     A --- C2
