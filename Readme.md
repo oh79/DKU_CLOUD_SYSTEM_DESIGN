@@ -27,7 +27,7 @@
 
 ## 2. 인프라 구성도
 
-아래는 주요 인프라 구성 요소와 이들 간의 관계를 나타낸 Mermaid 다이어그램입니다.
+아래는 주요 인프라 구성 요소와 이들 간의 물리적 연결 관계를 나타낸 Mermaid 다이어그램입니다.
 
 ```mermaid
 flowchart TD
@@ -85,4 +85,26 @@ flowchart TD
     C8 --- F
     C9 --- F
     C10 --- F
+flowchart TD
+    U[학생 사용자]
+    H[OpenStack Horizon (대시보드)]
+    K[Keystone (인증)]
+    N[Nova (컴퓨트 관리)]
+    G[Glance (이미지 관리)]
+    C[Cinder (블록 스토리지)]
+    NT[Neutron (네트워크 관리)]
+    APT[자동화 도구 (Terraform/Heat)]
+    PT[프로젝트/테넌트 관리]
+    
+    U --> H
+    H --> K
+    H --> PT
+    K --> N
+    K --> G
+    K --> C
+    K --> NT
+    APT --> N
+    APT --> G
+    APT --> C
+    APT --> NT
 ```
