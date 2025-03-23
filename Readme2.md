@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart TD
-    U[학생 사용자]
+    U[학생 계정]
     H[OpenStack Horizon 대시보드]
     K[Keystone 인증]
     N[Nova 컴퓨트 관리]
